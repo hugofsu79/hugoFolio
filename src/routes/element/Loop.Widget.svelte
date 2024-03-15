@@ -51,8 +51,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border-radius: 10px;
-    width: 52.3rem;
     height: 50px;
   }
 
@@ -68,9 +66,11 @@
 
   #traits {
     overflow: hidden;
+    width: 66rem;
     /* padding: -60px 0; */
     background: #ffffff;
     white-space: nowrap;
+    border-radius: 10px;
   }
 
   .traits-slide {

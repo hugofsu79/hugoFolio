@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.37 54.16">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: none;
+                stroke: #fff;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 1.16px;
+            }
+
+            .cls-2 {
+                fill: #005493;
+                stroke-width: 0px;
+            }
+        </style>
+    </defs>
+    <rect class="cls-2" width="52.37" height="54.16" rx="7.81" ry="7.81" />
+    <g>
+        <g id="_Répétition_miroir_" data-name="&amp;lt;Répétition miroir&amp;gt;">
+            <polygon class="cls-1" points="34.2 18.06 23.23 29.03 19.73 27.16 13.24 23.68 34.2 18.06" />
+        </g>
+        <polygon class="cls-1" points="34.2 18.06 31.77 27.16 28.59 39.02 23.23 29.03 34.2 18.06" />
+    </g>
+</svg>

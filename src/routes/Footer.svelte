@@ -10,12 +10,21 @@
     </div>
     <div class="flexRight">
       <p>Niort N 46° 19’ 51.168’’ O 46° 28’ 14.989’’</p>
+      <div style="left: 0; width: 100%; height: 450px; position: relative;">
+        <iframe
+          src="https://embed.music.apple.com/fr/playlist/mes-morceaux-du-moment/pl.u-vxy6kGBtk24Y8p"
+          style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; background-color: #e5431e;"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
   footer {
+    margin-top: 5px;
+    border-radius: 10px;
     /* justify-content: center;
     align-items: center; */
     background-color: #e5431e;

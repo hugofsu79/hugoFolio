@@ -1,46 +1,53 @@
-<script>
-  function typeWriterEffect() {
-    const words = [
-      "Hey !",
-      "Je m'appelle Hugo",
-      "je suis développeur front",
-      "Concepteur d'application",
-    ];
-    let wordCount = 0, // Compteur de mots
-      letterCount = 0, // Compteur de lettres
-      currentText = "",
-      currentWord = "",
-      timeOut = 200, // durée par défaut avant la prochaine action
-      isDeleting = false; // Indicateur de suppression de lettres
-    function type() {
-      wordCount === words.length && (wordCount = 0),
-        (currentWord = words[wordCount]),
-        (currentText = isDeleting
-          ? currentWord.slice(0, --letterCount)
-          : currentWord.slice(0, ++letterCount)),
-        (document.querySelector(".typewrite").textContent = currentText),
-        (timeOut = isDeleting ? 100 : 200),
-        (!isDeleting &&
-          currentText.length === currentWord.length &&
-          ((timeOut = 1e3), (isDeleting = !0))) ||
-          (isDeleting &&
-            0 === currentText.length &&
-            ((timeOut = 500), (isDeleting = !1), wordCount++)),
-        setTimeout(type, timeOut);
-    }
-    type();
-  }
-  typeWriterEffect();
+<!-- <script>
+  import { onMount } from "svelte";
 
-  //background Mouse
+  onMount(() => {
+    // Code à exécuter lorsque le composant est monté sur le DOM
+    typeWriterEffect();
+  });
+
+  const words = [
+    "Hey !",
+    "Je m'appelle Hugo",
+    "je suis développeur front",
+    "Concepteur d'application",
+  ];
+  let wordIndex = 0;
+  let letterIndex = 0;
+  let isDeleting = false;
+  let delay = 200;
+  let text = "";
+
+  function typeWriterEffect() {
+    const currentWord = words[wordIndex];
+    text = isDeleting
+      ? currentWord.slice(0, --letterIndex)
+      : currentWord.slice(0, ++letterIndex);
+    document.querySelector(".typewrite").textContent = text;
+
+    delay = isDeleting ? 100 : 200;
+
+    if (!isDeleting && text.length === currentWord.length) {
+      delay = 1000;
+      isDeleting = true;
+    } else if (isDeleting && text === "") {
+      delay = 500;
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+
+    setTimeout(typeWriterEffect, delay);
+  }
+
+  // Background Mouse
   document.addEventListener("mousemove", (e) => {
     const anchor = document.getElementById("anchor");
-    const hue = (e.clientX / window.innerWidth) * 360; // Calculer la teinte en fonction de la position horizontale de la souris
-    const hey = (e.clientY / window.innerWidth) * 360; // Calculer la teinte en fonction de la position verticale de la souris
-    anchor.style.backgroundColor = `hsl(${hue}, 50%, 50%)`; // Appliquer la couleur de fond en utilisant HSL
-    anchor.style.backgroundColor = `hsl(${hey}, 50%, 50%)`; // Appliquer la couleur de fond en utilisant HSL
+    const hue = (e.clientX / window.innerWidth) * 360;
+    const hey = (e.clientY / window.innerWidth) * 360;
+    anchor.style.backgroundColor = `hsl(${hue}, 50%, 50%)`;
+    anchor.style.backgroundColor = `hsl(${hey}, 50%, 50%)`;
   });
-</script>
+</script> -->
 
 <div class="anchor" id="anchor">
   <p class="title">&ZeroWidthSpace;</p>
@@ -59,9 +66,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 9.8rem;
     color: white;
     background-color: blueviolet;
+    border-radius: 10px;
   }
 
   .anchor p {
